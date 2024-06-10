@@ -13,9 +13,9 @@ const axiosInstance = axios.create({
 });
 
 // Function to make an HTTP request and validate the response
-export const request = <A>(decoder: t.Decoder<unknown, A>) => async (url: string, method: 'GET' | 'POST', data?: any): Promise<A> => {
+export const request = <A>(decoder: t.Decoder<unknown, A>) => async (url: string, method: 'GET'): Promise<A> => {
   // Make the actual HTTP request using axios
-  const response: AxiosResponse<unknown> = await axiosInstance.request({ url, method, data });
+  const response: AxiosResponse<unknown> = await axiosInstance.request({ url, method });
 
   // Use fp-ts and io-ts to decode and validate the response
   return pipe(
