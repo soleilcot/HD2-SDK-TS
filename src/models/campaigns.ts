@@ -1,10 +1,10 @@
 import * as t from 'io-ts';
 
-export const Campaigns = t.type({
+export const Campaign = t.type({
     id: t.number,
     planetIndex: t.number,
     type: t.number,
     count: t.number
 })
 
-export type Campaigns = t.TypeOf<typeof Campaigns>
+export type Campaign = t.TypeOf<typeof Campaign>

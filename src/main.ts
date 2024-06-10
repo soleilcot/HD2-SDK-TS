@@ -1,8 +1,8 @@
 import {apiClient} from './api/client'
 
 const a = async () => {
-    let data = await apiClient.war.getPlanetsWithPlayers();
-    console.log(data);
+    const data = await apiClient.war.getWarStatus();
+    console.log(data?.planetEvents[0].jointOperationIds);
 }
 
 a();
